@@ -1,2 +1,3 @@
 # Module ulgapp
 # RPC service class, partial path of RPC policy file
+ulg.client.GreetingService, FCEA685A2E99739C60560E90CC1E2D18.gwt.rpc

@@ -25,7 +25,7 @@ public class UrfMatchesServlet extends HttpServlet {
       
       
       
-      String apiKey = "ea3646b3-7527-4619-9c93-a788aa1c6f2a";
+      String apiKey = "1c0b0531-0e36-4362-98dd-7ba6ff89ae52";
       String apiKey_and_URL= "&api_key=" + apiKey;
       String apiKey_question_URL= "?api_key=" + apiKey;
       String getGameIds_URL_001 = "https://na.api.pvp.net/api/lol/na/v4.1/game/ids?beginDate=";
