@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>URF Stats</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js.js"></script>
+  </head>
+  <body>
+    <div  style="width: 500px; text-align:center; margin-left:auto;margin-right:auto;">
+      <h1>URF Stats</h1>
+      Summoner Name
+      <br /><input id="sumName" value="" /><input type="submit" onclick="urfStats();" />
+    </div>
+    <br />
+    <br />
+    <div  style="width: 500px; margin-left:auto;margin-right:auto;">
+      <div style="width: 350px; float:left;">
+        totalNeutralMinionsKilled(中立ミニオンKill数) : 
+      </div>
+      <div style="width: 50px; float:left;">
+        <span id="totalNeutralMinionsKilled">0</span>
+      </div>
+      <div style="width: 350px; float:left;">
+        totalMinionKills(ミニオンKill数) : 
+      </div>
+      <div style="width: 50px; float:left;">
+        <span id="totalMinionKills">0</span>
+      </div>
+      <div style="width: 350px; float:left;">
+        totalChampionKills(チャンピオンKill数) : 
+      </div>
+      <div style="width: 50px; float:left;">
+        <span id="totalChampionKills">0</span>
+      </div>
+      <div style="width: 350px; float:left;">
+        totalAssists(アシスト数) : 
+      </div>
+      <div style="width: 50px; float:left;">
+        <span id="totalAssists">0</span>
+      </div>
+      <div style="width: 350px; float:left;">
+        totalTurretsKilled(タレット破壊数) : 
+      </div>
+      <div style="width: 50px; float:left;">
+        <span id="totalTurretsKilled">0</span>
+      </div>
+      <div style="width: 350px; float:left;">
+        wins(勝利数) : 
+      </div>
+      <div style="width: 50px; float:left;">
+        <span id="wins">0</span>
+      </div>
+      <div style="width: 350px; float:left;">
+        modifyDate(更新日時) : 
+      </div>
+      <div style="width: 150px; float:left;">
+        <span id="modifyDate">0</span>
+      </div>
+    </div>
+
+    <div style="clear: left; padding-top: 30px; width: 800px;">
+      <br />
+      <br />(c)<a href="https://twitter.com/ulg_">ulg</a> <a href="../ulgapp/about.html">About</a>
+      <br />
+    </div>
+  </body>
+</html>

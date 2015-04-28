@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>ulg.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/ulgapp/greet</url-pattern>
+  </servlet-mapping>
+
+  <!-- appengine-try-java -->
+  <servlet>
+      <servlet-name>demo</servlet-name>
+      <servlet-class>ulg.myapp.DemoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>demo</servlet-name>
+      <url-pattern>/demo</url-pattern>
+  </servlet-mapping>
+  
+  <!-- SummonerLookUpServlet -->
+  <servlet>
+      <servlet-name>SumLookUpServlet</servlet-name>
+      <servlet-class>ulg.app.SummonerLookUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>SumLookUpServlet</servlet-name>
+      <url-pattern>/SumLookUpServlet</url-pattern>
+  </servlet-mapping>
+    
+  <!-- UrfStatsServlet -->
+  <servlet>
+      <servlet-name>UrfStats</servlet-name>
+      <servlet-class>ulg.urf.UrfStatsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>UrfStats</servlet-name>
+      <url-pattern>/urfstats</url-pattern>
+  </servlet-mapping>
+  
+  <!-- UrfMatches -->
+  <servlet>
+      <servlet-name>UrfMatches</servlet-name>
+      <servlet-class>ulg.urf.UrfMatchesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>UrfMatches</servlet-name>
+      <url-pattern>/UrfMatches</url-pattern>
+  </servlet-mapping>
+
+  <!-- Guestbook -->
+  <servlet>
+      <servlet-name>sign</servlet-name>
+      <servlet-class>ulg.guestbook.SignGuestbookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>sign</servlet-name>
+      <url-pattern>/sign</url-pattern>
+  </servlet-mapping>
+
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
