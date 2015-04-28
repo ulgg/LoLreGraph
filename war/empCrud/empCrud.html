@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+<title>社員登録</title>
+<link type="text/css" rel="stylesheet" href="/csslib/style.css"/>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/JavaScript"> 
+//<![CDATA[
+  var mode = "add";
+  var query = {};
+  query["mode"] = mode;
+  
+  //
+  //   （1） 画面ロード時の処理定義
+  //
+  $(function(){
+      // 【1】カーソルを社員番号フィールドにセット
+      $("#empno").focus();
+   
+      // 【2】テキスト入力フィールドでキーが押されたときに関数asynを呼び出す
+      $("#data").keydown(asyn);
+   
+      // 【3】登録・参照・更新・削除もラジオボタンクリックで処理モードを変更して画面をクリア
+      $("#crud").click(function(e){
+          mode=e.target.id;  
+          query["mode"] = mode;
+          clear();
+          $("#status").text(" ");
+          $("#empno").focus(); 
+      });
+      // 【4】社員番号5けた入力時にmode（登録・参照・更新・削除）に対応して処理
+      $("#empno").keyup(function(){
+          if ($("#empno").val().length == 5) {
+              if(mode=="rev" || mode=="upd" || mode=="del"){
+                  query["empno"]=$("#empno").val();
+                  $.get("/crud", query, read);   // A
+              }else if(mode=="add"){
+                  $("#empname").focus();
+              }
+          } 
+      });
+  });
+ 
+  // 
+  //   （2） 関数呼び出しによる処理定義
+  //
+  // 【5】サーブレットからのレスポンスデータで参照表示
+  function read(resp){
+      var items = resp.split("<i>");
+      if (items[0] == "NO") {
+          clear();
+          $("#status").text(items[1]);
+      }else {
+          var i = 0;
+          // X
+          $.each(["empname", "depart", "section"], function(){
+              $("#" + this).val(items[i++]);
+          });
+          $("#date").text(items[3]);
+          $("#status").text(items[4]);
+      }    
+  }
+  // 【6】 処理モード（登録・参照・更新・削除）に対応してサーブレットと非同期通信
+  function  asyn(e){
+      if(e.altKey){
+          query["empno"] = $("#empno").val();   
+          if (mode=="add"　|| mode=="upd"){
+              query["empname"] = $("#empname").val();
+              query["depart"] = $("#depart").val();
+              query["section"] = $("#section").val();
+              // B
+              $.post("/crud", query, function(resp){
+                  $("#status").text(resp);
+                  clear();
+              });
+          }else if(mode=="del"){
+              // C
+              $.post("/crud", query, function(resp){
+                  $("#status").text(resp);
+                  clear();
+              });
+          }
+      }
+  }
+  // 【7】　社員情報の入力フィールドをクリア／リセット
+  function clear(){
+      $.each(["empno","empname","depart","section"], function(){
+          $("#" + this).val("");
+      });
+      $("#date").text(" ");
+      $("#empno").focus();
+  }   
+//]]>
+</script>
+</head>
+<body>
+<table width="330" border="1" cellpadding="0" class="b1">
+  <thead id="crud"> 
+    <tr><th class="t4" colspan="2">社員マスタ管理</th></tr>
+    <tr>
+    <th colspan="2">
+      <input type="radio" name="op" id="add" checked="checked" />登録
+      <input type="radio" name="op" id="rev" />参照
+      <input type="radio" name="op" id="upd" />更新
+      <input type="radio" name="op" id="del" />削除
+    </th>
+    </tr>
+  </thead>
+  <tbody id="data">
+    <tr>
+      <th width="100">社員番号</th>
+      <td><input type="text" size="12" id="empno"/></td>
+    </tr>
+    <tr><th>社員氏名</th><td><input type="text" id="empname"/></td></tr>
+    <tr><th>所属部</th><td><input type="text" size="34" id="depart"/></td></tr>
+    <tr><th>所属課</th><td><input type="text" size="34" id="section"/></td></tr>
+    <tr><th>更新日時</th><td id="date"> </td></tr>
+    <tr><th>ステータス</th><td id="status"> </td></tr>
+  </tbody>
+</table>
+社員番号は5桁<br />
+alt キー = 登録、削除<br />
+</body>
+</html>

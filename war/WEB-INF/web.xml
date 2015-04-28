@@ -66,6 +66,16 @@
       <url-pattern>/sign</url-pattern>
   </servlet-mapping>
 
+  <!-- empCrud -->
+  <servlet>
+    <servlet-name>crud</servlet-name>
+    <servlet-class>ulg.erp.emp.empCrudServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>crud</servlet-name>
+    <url-pattern>/crud</url-pattern>
+  </servlet-mapping>
+  
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
