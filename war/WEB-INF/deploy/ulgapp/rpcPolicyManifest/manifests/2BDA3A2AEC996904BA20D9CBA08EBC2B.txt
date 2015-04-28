@@ -1,0 +1,2 @@
+serviceClass: ulg.client.GreetingService
+path: FCEA685A2E99739C60560E90CC1E2D18.gwt.rpc
