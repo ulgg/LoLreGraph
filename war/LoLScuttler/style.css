@@ -25,12 +25,35 @@ div.item {
   border-radius: 0.3em;
 }
 
+div.champ {
+  width:500px;
+  height:auto;
+  float:left;
+  border:1px solid #ddd;
+  border-radius: 0.3em;
+}
+
 div.name {
   width:100px;
   height:80px;
   text-align: center;
 }
+
 div.item div.tooltip {
+    z-index:10;
+    display:none;
+    padding:10px 10px;
+    margin:-150px 70px;
+    width:300px;
+    
+    position:absolute;
+    color:#fff;
+    border:1px solid #000;
+    background:#000;
+    opacity: 0.7;
+}
+
+div.champ div.tooltip {
     z-index:10;
     display:none;
     padding:10px 10px;
