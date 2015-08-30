@@ -6,8 +6,35 @@ var imageUrl = null;
 
 // display Data
 $(document).ready(function () {
+  
+  
+//  $.getJSON("//ddragon.leagueoflegends.com/realms/na.json", function(json){
+//    alert("JSON Data: " + JSON.stringify(json));
+//  });
 
-  getItemList()
+  $.ajax({
+    url: '//ddragon.leagueoflegends.com/api/versions.json',
+    type: 'GET',
+    dataType: 'jsonp',
+    data : {
+      
+    },
+
+    success: function(json){
+      alert("JSON Data: ");
+      //alert("JSON Data: " + JSON.stringify(json));
+    },
+    
+    error: function (XMLHttpRequest, textStatus, errorThrown) {
+      $('#errorMsg').html('error getting Item data!' + 
+          '<br />XMLHttpRequest=' + XMLHttpRequest + '</ br>' + 
+          '<br />textStatus=' + textStatus + '</ br>' + 
+          '<br />errorThrown=' + errorThrown);
+    }
+    
+  });
+  
+  //getItemList()
 
 
 

@@ -1,0 +1,65 @@
+a,a:link,a:visited,a:hover,a:active {/*ƒŠƒ“ƒN‚³‚ê‚½•¶Žš*/
+    color:#000;
+    text-decoration:none;
+}
+
+div#container {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+div#chartWithOverlay {
+  margin: 0 0 0 50px;
+  position: relative;
+  width: 1000px;
+}
+
+div#barchart_material {
+  width: 800px;
+  height: 500px;
+}
+
+div#filter_checkboxes {
+  width: 300px;
+  height: 500px;
+  font-size: 12px;
+  position: absolute;
+  top: -10px;  /* chartArea top  */
+  left: 500px; /* chartArea left */
+}
+
+div#filter_checkboxes input {
+  width: 12px;
+  height: 12px;
+  margin: 2px;
+}
+
+ul#filter_ul li {
+  list-style: none;
+}
+
+ul#filter_ul label {
+  margin: 0 0 2px 0;
+}
+
+div#champImagesArea {
+  width: 78px;
+  height: 400px;
+  /*background-color: #FFF;*/
+  position: absolute;
+  /*position: none;*/
+  top: -15px;  /* chartArea top  */
+  left: -80px; /* chartArea left */
+}
+
+div#champImagesArea ul {
+  list-style: none;
+}
+
+div#champImagesArea li {
+  margin: 0 0 8px 0;
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-repeat' : no-repeat;
+}

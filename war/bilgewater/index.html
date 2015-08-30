@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Bilgewater Result</title>
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Load the AJAX API-->
+   <script type="text/javascript" src='https://www.google.com/jsapi'></script>
+    <!-- my source -->
+    <script src="js/bilgewater.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" id="chartScriptTag">
+      // Load the Visualization API and the piechart package.
+      google.load("visualization", "1.1", {packages:["bar"], 'language': 'en'});
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+    </script>
+  </head>
+  <body>
+    <h1>LoL reGraph</h1>
+
+    <div id="container">
+      Black Market Sample <select id="matchIdSelect"></select> or
+      Match ID <input type="text" id="matchIdText" maxlength="10"></input>
+      <input type="button" id="matchIdButton" value="reDraw"></input>
+      <span style="margin:0 0 0 10px;">
+        <a href="/DefaultSample/about.html">About</a>
+      </span>
+      <span style="margin:0 0 0 10px;">
+        (c) <a href="https://twitter.com/ulg_">ulg</a>
+      </span>
+      
+      <p id="msg"></p>
+      <div id="chartWithOverlay">
+        <!--Div that will hold the bar chart-->
+        <div id="barchart_material"></div>
+        <!--Div that will hold the check boxes for filters -->
+        <div id="filter_checkboxes">
+          <ul id="filter_ul"></ul>
+        </div>
+        <div id="champImagesArea">
+          <ul id="champImageUl">
+            <li id="champImage_1"></li>
+            <li id="champImage_2"></li>
+            <li id="champImage_3"></li>
+            <li id="champImage_4"></li>
+            <li id="champImage_5"></li>
+            <li id="champImage_6"></li>
+            <li id="champImage_7"></li>
+            <li id="champImage_8"></li>
+            <li id="champImage_9"></li>
+            <li id="champImage_10"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

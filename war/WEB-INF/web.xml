@@ -56,6 +56,16 @@
       <url-pattern>/UrfMatches</url-pattern>
   </servlet-mapping>
 
+  <!-- Bilgewater History -->
+  <servlet>
+      <servlet-name>GetMatchDetailServlet</servlet-name>
+      <servlet-class>ulg.bilgewater.GetMatchDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>GetMatchDetailServlet</servlet-name>
+      <url-pattern>/GetMatchDetailServlet</url-pattern>
+  </servlet-mapping>
+
   <!-- Guestbook -->
   <servlet>
       <servlet-name>sign</servlet-name>
